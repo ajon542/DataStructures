@@ -85,29 +85,36 @@ namespace LinkedList
         {
             SNode curr = head;
             SNode prev = null;
-            SNode toDelete = null;
 
             // Delete all nodes with the given data.
             while (curr != null)
             {
+                // If the current node matches the data:
                 if (curr.data == data)
                 {
-                    toDelete = curr;
+                    // If head node:
                     if (prev == null)
                     {
+                        // Skip over the node.
                         head = curr.next;
                     }
+                    // If any other node:
                     else
                     {
+                        // Update the incoming reference to the current node
+                        // to skip over the node.
                         prev.next = curr.next;
                     }
                 }
+                // Current node does not match data:
                 else
                 {
+                    // Update the previous node to be current node.
                     prev = curr;
                 }
+
+                // Move to the next node.
                 curr = curr.next;
-                toDelete = null;
             }
 
             return head;
