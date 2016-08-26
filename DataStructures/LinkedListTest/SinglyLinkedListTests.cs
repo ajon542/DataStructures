@@ -157,7 +157,7 @@ namespace LinkedListTest
         {
             SNode head = null;
             head = SinglyLinkedList.AddTail(head, 1);
-            head = SinglyLinkedList.Delete(head, 1);
+            head = SinglyLinkedList.DeleteAll(head, 1);
             Assert.IsNull(head);
         }
 
@@ -167,7 +167,7 @@ namespace LinkedListTest
             SNode head = null;
             head = SinglyLinkedList.AddTail(head, 1);
             head = SinglyLinkedList.AddTail(head, 2);
-            head = SinglyLinkedList.Delete(head, 1);
+            head = SinglyLinkedList.DeleteAll(head, 1);
             Assert.AreEqual(2, head.data);
             Assert.IsNull(head.next);
         }
@@ -178,7 +178,7 @@ namespace LinkedListTest
             SNode head = null;
             head = SinglyLinkedList.AddTail(head, 1);
             head = SinglyLinkedList.AddTail(head, 2);
-            head = SinglyLinkedList.Delete(head, 2);
+            head = SinglyLinkedList.DeleteAll(head, 2);
             Assert.AreEqual(1, head.data);
             Assert.IsNull(head.next);
         }
@@ -190,7 +190,7 @@ namespace LinkedListTest
             head = SinglyLinkedList.AddTail(head, 1);
             head = SinglyLinkedList.AddTail(head, 2);
             head = SinglyLinkedList.AddTail(head, 3);
-            head = SinglyLinkedList.Delete(head, 2);
+            head = SinglyLinkedList.DeleteAll(head, 2);
             Assert.AreEqual(1, head.data);
             Assert.AreEqual(3, head.next.data);
             Assert.IsNull(head.next.next);
@@ -203,7 +203,7 @@ namespace LinkedListTest
             head = SinglyLinkedList.AddTail(head, 1);
             head = SinglyLinkedList.AddTail(head, 1);
             head = SinglyLinkedList.AddTail(head, 1);
-            head = SinglyLinkedList.Delete(head, 1);
+            head = SinglyLinkedList.DeleteAll(head, 1);
             Assert.IsNull(head);
         }
 
@@ -213,7 +213,7 @@ namespace LinkedListTest
             SNode head = null;
             head = SinglyLinkedList.AddTail(head, 1);
             head = SinglyLinkedList.AddTail(head, 1);
-            head = SinglyLinkedList.Delete(head, 2);
+            head = SinglyLinkedList.DeleteAll(head, 2);
             Assert.AreEqual(1, head.data);
             Assert.AreEqual(1, head.next.data);
             Assert.IsNull(head.next.next);

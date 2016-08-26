@@ -73,7 +73,7 @@ namespace LinkedList
             return head;
         }
 
-        public static SNode Delete(SNode head, int data)
+        public static SNode DeleteAll(SNode head, int data)
         {
             SNode curr = head;
             SNode prev = null;
