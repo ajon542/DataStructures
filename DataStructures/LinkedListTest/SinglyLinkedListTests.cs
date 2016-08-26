@@ -13,7 +13,7 @@ namespace LinkedListTest
         public void TestMethod1()
         {
             SNode head = null;
-            head = SinglyLinkedList.AddHead(head, 1);
+            head = SinglyLinkedListOps.AddHead(head, 1);
 
             Assert.AreEqual(1, head.data);
             Assert.IsNull(head.next);
@@ -23,8 +23,8 @@ namespace LinkedListTest
         public void TestMethod2()
         {
             SNode head = null;
-            head = SinglyLinkedList.AddHead(head, 1);
-            head = SinglyLinkedList.AddHead(head, 2);
+            head = SinglyLinkedListOps.AddHead(head, 1);
+            head = SinglyLinkedListOps.AddHead(head, 2);
 
             Assert.AreEqual(2, head.data);
             Assert.AreEqual(1, head.next.data);
@@ -35,9 +35,9 @@ namespace LinkedListTest
         public void TestMethod3()
         {
             SNode head = null;
-            head = SinglyLinkedList.AddHead(head, 1);
-            head = SinglyLinkedList.AddHead(head, 2);
-            head = SinglyLinkedList.AddHead(head, 3);
+            head = SinglyLinkedListOps.AddHead(head, 1);
+            head = SinglyLinkedListOps.AddHead(head, 2);
+            head = SinglyLinkedListOps.AddHead(head, 3);
 
             Assert.AreEqual(3, head.data);
             Assert.AreEqual(2, head.next.data);
@@ -51,7 +51,7 @@ namespace LinkedListTest
         public void TestMethod4()
         {
             SNode head = null;
-            head = SinglyLinkedList.AddTail(head, 1);
+            head = SinglyLinkedListOps.AddTail(head, 1);
 
             Assert.AreEqual(1, head.data);
             Assert.IsNull(head.next);
@@ -61,8 +61,8 @@ namespace LinkedListTest
         public void TestMethod5()
         {
             SNode head = null;
-            head = SinglyLinkedList.AddTail(head, 1);
-            head = SinglyLinkedList.AddTail(head, 2);
+            head = SinglyLinkedListOps.AddTail(head, 1);
+            head = SinglyLinkedListOps.AddTail(head, 2);
 
             Assert.AreEqual(1, head.data);
             Assert.AreEqual(2, head.next.data);
@@ -73,9 +73,9 @@ namespace LinkedListTest
         public void TestMethod6()
         {
             SNode head = null;
-            head = SinglyLinkedList.AddTail(head, 1);
-            head = SinglyLinkedList.AddTail(head, 2);
-            head = SinglyLinkedList.AddTail(head, 3);
+            head = SinglyLinkedListOps.AddTail(head, 1);
+            head = SinglyLinkedListOps.AddTail(head, 2);
+            head = SinglyLinkedListOps.AddTail(head, 3);
 
             Assert.AreEqual(1, head.data);
             Assert.AreEqual(2, head.next.data);
@@ -89,7 +89,7 @@ namespace LinkedListTest
         public void TestMethod7()
         {
             SNode head = null;
-            head = SinglyLinkedList.Insert(head, 1, 0);
+            head = SinglyLinkedListOps.InsertAt(head, 1, 0);
 
             Assert.AreEqual(1, head.data);
             Assert.IsNull(head.next);
@@ -99,8 +99,8 @@ namespace LinkedListTest
         public void TestMethod8()
         {
             SNode head = null;
-            head = SinglyLinkedList.Insert(head, 1, 0);
-            head = SinglyLinkedList.Insert(head, 2, 0);
+            head = SinglyLinkedListOps.InsertAt(head, 1, 0);
+            head = SinglyLinkedListOps.InsertAt(head, 2, 0);
 
             Assert.AreEqual(2, head.data);
             Assert.AreEqual(1, head.next.data);
@@ -111,9 +111,9 @@ namespace LinkedListTest
         public void TestMethod9()
         {
             SNode head = null;
-            head = SinglyLinkedList.Insert(head, 1, 0);
-            head = SinglyLinkedList.Insert(head, 2, 0);
-            head = SinglyLinkedList.Insert(head, 3, 1);
+            head = SinglyLinkedListOps.InsertAt(head, 1, 0);
+            head = SinglyLinkedListOps.InsertAt(head, 2, 0);
+            head = SinglyLinkedListOps.InsertAt(head, 3, 1);
 
             Assert.AreEqual(2, head.data);
             Assert.AreEqual(3, head.next.data);
@@ -125,9 +125,9 @@ namespace LinkedListTest
         public void TestMethod10()
         {
             SNode head = null;
-            head = SinglyLinkedList.Insert(head, 1, 0);
-            head = SinglyLinkedList.Insert(head, 2, 0);
-            head = SinglyLinkedList.Insert(head, 3, 2);
+            head = SinglyLinkedListOps.InsertAt(head, 1, 0);
+            head = SinglyLinkedListOps.InsertAt(head, 2, 0);
+            head = SinglyLinkedListOps.InsertAt(head, 3, 2);
 
             Assert.AreEqual(2, head.data);
             Assert.AreEqual(1, head.next.data);
@@ -139,9 +139,9 @@ namespace LinkedListTest
         public void TestMethod11()
         {
             SNode head = null;
-            head = SinglyLinkedList.Insert(head, 1, 0);
-            head = SinglyLinkedList.Insert(head, 2, 0);
-            head = SinglyLinkedList.Insert(head, 3, 100);
+            head = SinglyLinkedListOps.InsertAt(head, 1, 0);
+            head = SinglyLinkedListOps.InsertAt(head, 2, 0);
+            head = SinglyLinkedListOps.InsertAt(head, 3, 100);
 
             Assert.AreEqual(2, head.data);
             Assert.AreEqual(1, head.next.data);
@@ -156,8 +156,8 @@ namespace LinkedListTest
         public void TestMethod12()
         {
             SNode head = null;
-            head = SinglyLinkedList.AddTail(head, 1);
-            head = SinglyLinkedList.DeleteAll(head, 1);
+            head = SinglyLinkedListOps.AddTail(head, 1);
+            head = SinglyLinkedListOps.DeleteAll(head, 1);
             Assert.IsNull(head);
         }
 
@@ -165,9 +165,9 @@ namespace LinkedListTest
         public void TestMethod13()
         {
             SNode head = null;
-            head = SinglyLinkedList.AddTail(head, 1);
-            head = SinglyLinkedList.AddTail(head, 2);
-            head = SinglyLinkedList.DeleteAll(head, 1);
+            head = SinglyLinkedListOps.AddTail(head, 1);
+            head = SinglyLinkedListOps.AddTail(head, 2);
+            head = SinglyLinkedListOps.DeleteAll(head, 1);
             Assert.AreEqual(2, head.data);
             Assert.IsNull(head.next);
         }
@@ -176,9 +176,9 @@ namespace LinkedListTest
         public void TestMethod14()
         {
             SNode head = null;
-            head = SinglyLinkedList.AddTail(head, 1);
-            head = SinglyLinkedList.AddTail(head, 2);
-            head = SinglyLinkedList.DeleteAll(head, 2);
+            head = SinglyLinkedListOps.AddTail(head, 1);
+            head = SinglyLinkedListOps.AddTail(head, 2);
+            head = SinglyLinkedListOps.DeleteAll(head, 2);
             Assert.AreEqual(1, head.data);
             Assert.IsNull(head.next);
         }
@@ -187,10 +187,10 @@ namespace LinkedListTest
         public void TestMethod15()
         {
             SNode head = null;
-            head = SinglyLinkedList.AddTail(head, 1);
-            head = SinglyLinkedList.AddTail(head, 2);
-            head = SinglyLinkedList.AddTail(head, 3);
-            head = SinglyLinkedList.DeleteAll(head, 2);
+            head = SinglyLinkedListOps.AddTail(head, 1);
+            head = SinglyLinkedListOps.AddTail(head, 2);
+            head = SinglyLinkedListOps.AddTail(head, 3);
+            head = SinglyLinkedListOps.DeleteAll(head, 2);
             Assert.AreEqual(1, head.data);
             Assert.AreEqual(3, head.next.data);
             Assert.IsNull(head.next.next);
@@ -200,10 +200,10 @@ namespace LinkedListTest
         public void TestMethod16()
         {
             SNode head = null;
-            head = SinglyLinkedList.AddTail(head, 1);
-            head = SinglyLinkedList.AddTail(head, 1);
-            head = SinglyLinkedList.AddTail(head, 1);
-            head = SinglyLinkedList.DeleteAll(head, 1);
+            head = SinglyLinkedListOps.AddTail(head, 1);
+            head = SinglyLinkedListOps.AddTail(head, 1);
+            head = SinglyLinkedListOps.AddTail(head, 1);
+            head = SinglyLinkedListOps.DeleteAll(head, 1);
             Assert.IsNull(head);
         }
 
@@ -211,9 +211,9 @@ namespace LinkedListTest
         public void TestMethod17()
         {
             SNode head = null;
-            head = SinglyLinkedList.AddTail(head, 1);
-            head = SinglyLinkedList.AddTail(head, 1);
-            head = SinglyLinkedList.DeleteAll(head, 2);
+            head = SinglyLinkedListOps.AddTail(head, 1);
+            head = SinglyLinkedListOps.AddTail(head, 1);
+            head = SinglyLinkedListOps.DeleteAll(head, 2);
             Assert.AreEqual(1, head.data);
             Assert.AreEqual(1, head.next.data);
             Assert.IsNull(head.next.next);
@@ -236,7 +236,7 @@ namespace LinkedListTest
             n2.next = n3;
             n3.next = n4;
 
-            Assert.AreEqual(-1, SinglyLinkedList.FindCycle(head));
+            Assert.AreEqual(-1, SinglyLinkedListOps.FindCycle(head));
         }
 
         [TestMethod]
@@ -248,7 +248,7 @@ namespace LinkedListTest
             head.next = n1;
             n1.next = head;
 
-            Assert.AreEqual(2, SinglyLinkedList.FindCycle(head));
+            Assert.AreEqual(2, SinglyLinkedListOps.FindCycle(head));
         }
 
         [TestMethod]
@@ -262,7 +262,7 @@ namespace LinkedListTest
             n1.next = n2;
             n2.next = head;
 
-            Assert.AreEqual(3, SinglyLinkedList.FindCycle(head));
+            Assert.AreEqual(3, SinglyLinkedListOps.FindCycle(head));
         }
 
         [TestMethod]
@@ -276,7 +276,7 @@ namespace LinkedListTest
             n1.next = n2;
             n2.next = n1;
 
-            Assert.AreEqual(2, SinglyLinkedList.FindCycle(head));
+            Assert.AreEqual(2, SinglyLinkedListOps.FindCycle(head));
         }
         #endregion
 
@@ -286,7 +286,7 @@ namespace LinkedListTest
         {
             SNode head = new SNode { data = 1 };
 
-            head = SinglyLinkedList.Reverse(head);
+            head = SinglyLinkedListOps.Reverse(head);
 
             Assert.AreEqual(1, head.data);
             Assert.IsNull(head.next);
@@ -296,9 +296,9 @@ namespace LinkedListTest
         public void TestMethod23()
         {
             SNode head = new SNode { data = 1 };
-            head = SinglyLinkedList.AddTail(head, 2);
+            head = SinglyLinkedListOps.AddTail(head, 2);
 
-            head = SinglyLinkedList.Reverse(head);
+            head = SinglyLinkedListOps.Reverse(head);
 
             Assert.AreEqual(2, head.data);
             Assert.AreEqual(1, head.next.data);
@@ -309,10 +309,10 @@ namespace LinkedListTest
         public void TestMethod24()
         {
             SNode head = new SNode { data = 1 };
-            head = SinglyLinkedList.AddTail(head, 2);
-            head = SinglyLinkedList.AddTail(head, 3);
+            head = SinglyLinkedListOps.AddTail(head, 2);
+            head = SinglyLinkedListOps.AddTail(head, 3);
 
-            head = SinglyLinkedList.Reverse(head);
+            head = SinglyLinkedListOps.Reverse(head);
 
             Assert.AreEqual(3, head.data);
             Assert.AreEqual(2, head.next.data);

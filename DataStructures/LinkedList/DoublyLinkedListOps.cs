@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace LinkedList
 {
+    /// <summary>
+    /// Data structure representing a node in a doubly linked list.
+    /// </summary>
     public class DNode
     {
         public int data;
@@ -13,7 +16,16 @@ namespace LinkedList
         public DNode prev;
     }
 
-    public class DoublyLinkedList
+    /// <summary>
+    /// Collection of methods to perform basic operations on a doubly linked list.
+    /// </summary>
+    /// <remarks>
+    /// Some of the operations can be cleaned up if an alternate implementation
+    /// of a linked list is used. If the linked list contained sentinal head and tail
+    /// nodes, the addition and removal of any node becomes trivial. The operation
+    /// does not have to check for the common edge cases (head and tail nodes).
+    /// </remarks>
+    public class DoublyLinkedListOps
     {
         public static DNode AddHead(DNode head, int data)
         {

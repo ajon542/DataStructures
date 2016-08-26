@@ -1,18 +1,26 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LinkedList
 {
+    /// <summary>
+    /// Data structure representing a node in a singly linked list.
+    /// </summary>
     public class SNode
     {
         public int data;
         public SNode next;
     }
 
-    public class SinglyLinkedList
+    /// <summary>
+    /// Collection of methods to perform basic operations on a singly linked list.
+    /// </summary>
+    /// <remarks>
+    /// Some of the operations can be cleaned up if an alternate implementation
+    /// of a linked list is used. If the linked list contained sentinal head and tail
+    /// nodes, the addition and removal of any node becomes trivial. The operation
+    /// does not have to check for the common edge cases (head and tail nodes).
+    /// </remarks>
+    public static class SinglyLinkedListOps
     {
         public static SNode AddHead(SNode head, int data)
         {
@@ -45,7 +53,7 @@ namespace LinkedList
             return head;
         }
 
-        public static SNode Insert(SNode head, int data, int position)
+        public static SNode InsertAt(SNode head, int data, int position)
         {
             SNode newNode = new SNode { data = data };
 

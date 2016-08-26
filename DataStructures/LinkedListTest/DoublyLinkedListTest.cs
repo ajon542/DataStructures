@@ -14,7 +14,7 @@ namespace LinkedListTest
         public void TestMethod1()
         {
             DNode head = null;
-            head = DoublyLinkedList.AddHead(head, 1);
+            head = DoublyLinkedListOps.AddHead(head, 1);
 
             // 1 <-> null
             Assert.AreEqual(1, head.data);
@@ -25,8 +25,8 @@ namespace LinkedListTest
         public void TestMethod2()
         {
             DNode head = null;
-            head = DoublyLinkedList.AddHead(head, 1);
-            head = DoublyLinkedList.AddHead(head, 2);
+            head = DoublyLinkedListOps.AddHead(head, 1);
+            head = DoublyLinkedListOps.AddHead(head, 2);
 
             // 2 <-> 1 <-> null
             Assert.AreEqual(2, head.data);
@@ -39,9 +39,9 @@ namespace LinkedListTest
         public void TestMethod3()
         {
             DNode head = null;
-            head = DoublyLinkedList.AddHead(head, 1);
-            head = DoublyLinkedList.AddHead(head, 2);
-            head = DoublyLinkedList.AddHead(head, 3);
+            head = DoublyLinkedListOps.AddHead(head, 1);
+            head = DoublyLinkedListOps.AddHead(head, 2);
+            head = DoublyLinkedListOps.AddHead(head, 3);
 
             // 3 <-> 2 <-> 1 <-> null
             Assert.AreEqual(3, head.data);
@@ -58,7 +58,7 @@ namespace LinkedListTest
         public void TestMethod4()
         {
             DNode head = null;
-            head = DoublyLinkedList.AddTail(head, 1);
+            head = DoublyLinkedListOps.AddTail(head, 1);
 
             // 1 <-> null
             Assert.AreEqual(1, head.data);
@@ -69,8 +69,8 @@ namespace LinkedListTest
         public void TestMethod5()
         {
             DNode head = null;
-            head = DoublyLinkedList.AddTail(head, 1);
-            head = DoublyLinkedList.AddTail(head, 2);
+            head = DoublyLinkedListOps.AddTail(head, 1);
+            head = DoublyLinkedListOps.AddTail(head, 2);
 
             // 1 <-> 2 <-> null
             Assert.AreEqual(1, head.data);
@@ -83,9 +83,9 @@ namespace LinkedListTest
         public void TestMethod6()
         {
             DNode head = null;
-            head = DoublyLinkedList.AddTail(head, 1);
-            head = DoublyLinkedList.AddTail(head, 2);
-            head = DoublyLinkedList.AddTail(head, 3);
+            head = DoublyLinkedListOps.AddTail(head, 1);
+            head = DoublyLinkedListOps.AddTail(head, 2);
+            head = DoublyLinkedListOps.AddTail(head, 3);
 
             // 1 <-> 2 <-> 3 <-> null
             Assert.AreEqual(1, head.data);
@@ -102,7 +102,7 @@ namespace LinkedListTest
         public void TestMethod7()
         {
             DNode head = null;
-            head = DoublyLinkedList.Insert(head, 1, 0);
+            head = DoublyLinkedListOps.Insert(head, 1, 0);
 
             // 1 <-> null
             Assert.AreEqual(1, head.data);
@@ -113,8 +113,8 @@ namespace LinkedListTest
         public void TestMethod8()
         {
             DNode head = null;
-            head = DoublyLinkedList.Insert(head, 1, 0);
-            head = DoublyLinkedList.Insert(head, 2, 0);
+            head = DoublyLinkedListOps.Insert(head, 1, 0);
+            head = DoublyLinkedListOps.Insert(head, 2, 0);
 
             // 2 <-> 1 <-> null
             Assert.AreEqual(2, head.data);
@@ -127,9 +127,9 @@ namespace LinkedListTest
         public void TestMethod9()
         {
             DNode head = null;
-            head = DoublyLinkedList.Insert(head, 1, 0);
-            head = DoublyLinkedList.Insert(head, 2, 0);
-            head = DoublyLinkedList.Insert(head, 3, 1);
+            head = DoublyLinkedListOps.Insert(head, 1, 0);
+            head = DoublyLinkedListOps.Insert(head, 2, 0);
+            head = DoublyLinkedListOps.Insert(head, 3, 1);
 
             // 2 <-> 3 <-> 1 <-> null
             Assert.AreEqual(2, head.data);
@@ -144,9 +144,9 @@ namespace LinkedListTest
         public void TestMethod10()
         {
             DNode head = null;
-            head = DoublyLinkedList.Insert(head, 1, 0);
-            head = DoublyLinkedList.Insert(head, 2, 0);
-            head = DoublyLinkedList.Insert(head, 3, 2);
+            head = DoublyLinkedListOps.Insert(head, 1, 0);
+            head = DoublyLinkedListOps.Insert(head, 2, 0);
+            head = DoublyLinkedListOps.Insert(head, 3, 2);
 
             // 2 <-> 1 <-> 3 <-> null 
             Assert.AreEqual(2, head.data);
@@ -161,9 +161,9 @@ namespace LinkedListTest
         public void TestMethod11()
         {
             DNode head = null;
-            head = DoublyLinkedList.Insert(head, 1, 0);
-            head = DoublyLinkedList.Insert(head, 2, 0);
-            head = DoublyLinkedList.Insert(head, 3, 100);
+            head = DoublyLinkedListOps.Insert(head, 1, 0);
+            head = DoublyLinkedListOps.Insert(head, 2, 0);
+            head = DoublyLinkedListOps.Insert(head, 3, 100);
 
             // 2 <-> 1 <-> 3 <-> null 
             Assert.AreEqual(2, head.data);
@@ -180,8 +180,8 @@ namespace LinkedListTest
         public void TestMethod12()
         {
             DNode head = null;
-            head = DoublyLinkedList.AddTail(head, 1);
-            head = DoublyLinkedList.DeleteFirstOf(head, 1);
+            head = DoublyLinkedListOps.AddTail(head, 1);
+            head = DoublyLinkedListOps.DeleteFirstOf(head, 1);
             Assert.IsNull(head);
         }
 
@@ -189,9 +189,9 @@ namespace LinkedListTest
         public void TestMethod13()
         {
             DNode head = null;
-            head = DoublyLinkedList.AddTail(head, 1);
-            head = DoublyLinkedList.AddTail(head, 2);
-            head = DoublyLinkedList.DeleteFirstOf(head, 1);
+            head = DoublyLinkedListOps.AddTail(head, 1);
+            head = DoublyLinkedListOps.AddTail(head, 2);
+            head = DoublyLinkedListOps.DeleteFirstOf(head, 1);
 
             ValidateList(head, new List<int> { 2 });
         }
@@ -200,9 +200,9 @@ namespace LinkedListTest
         public void TestMethod14()
         {
             DNode head = null;
-            head = DoublyLinkedList.AddTail(head, 1);
-            head = DoublyLinkedList.AddTail(head, 2);
-            head = DoublyLinkedList.DeleteFirstOf(head, 2);
+            head = DoublyLinkedListOps.AddTail(head, 1);
+            head = DoublyLinkedListOps.AddTail(head, 2);
+            head = DoublyLinkedListOps.DeleteFirstOf(head, 2);
 
             ValidateList(head, new List<int> { 1 });
         }
@@ -211,12 +211,12 @@ namespace LinkedListTest
         public void TestMethod15()
         {
             DNode head = null;
-            head = DoublyLinkedList.AddTail(head, 1);
-            head = DoublyLinkedList.AddTail(head, 2);
-            head = DoublyLinkedList.AddTail(head, 3);
-            head = DoublyLinkedList.AddTail(head, 4);
-            head = DoublyLinkedList.AddTail(head, 5);
-            head = DoublyLinkedList.DeleteFirstOf(head, 5);
+            head = DoublyLinkedListOps.AddTail(head, 1);
+            head = DoublyLinkedListOps.AddTail(head, 2);
+            head = DoublyLinkedListOps.AddTail(head, 3);
+            head = DoublyLinkedListOps.AddTail(head, 4);
+            head = DoublyLinkedListOps.AddTail(head, 5);
+            head = DoublyLinkedListOps.DeleteFirstOf(head, 5);
 
             ValidateList(head, new List<int> { 1, 2, 3, 4 });
         }
@@ -225,16 +225,16 @@ namespace LinkedListTest
         public void TestMethod16()
         {
             DNode head = null;
-            head = DoublyLinkedList.AddTail(head, 1);
-            head = DoublyLinkedList.AddTail(head, 2);
-            head = DoublyLinkedList.AddTail(head, 3);
-            head = DoublyLinkedList.AddTail(head, 4);
-            head = DoublyLinkedList.AddTail(head, 5);
-            head = DoublyLinkedList.DeleteFirstOf(head, 5);
-            head = DoublyLinkedList.DeleteFirstOf(head, 4);
-            head = DoublyLinkedList.DeleteFirstOf(head, 2);
-            head = DoublyLinkedList.DeleteFirstOf(head, 3);
-            head = DoublyLinkedList.DeleteFirstOf(head, 1);
+            head = DoublyLinkedListOps.AddTail(head, 1);
+            head = DoublyLinkedListOps.AddTail(head, 2);
+            head = DoublyLinkedListOps.AddTail(head, 3);
+            head = DoublyLinkedListOps.AddTail(head, 4);
+            head = DoublyLinkedListOps.AddTail(head, 5);
+            head = DoublyLinkedListOps.DeleteFirstOf(head, 5);
+            head = DoublyLinkedListOps.DeleteFirstOf(head, 4);
+            head = DoublyLinkedListOps.DeleteFirstOf(head, 2);
+            head = DoublyLinkedListOps.DeleteFirstOf(head, 3);
+            head = DoublyLinkedListOps.DeleteFirstOf(head, 1);
 
             ValidateList(head, new List<int> ());
         }
