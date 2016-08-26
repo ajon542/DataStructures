@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using LinkedList;
@@ -318,6 +319,77 @@ namespace LinkedListTest
             Assert.AreEqual(2, head.next.data);
             Assert.AreEqual(1, head.next.next.data);
             Assert.IsNull(head.next.next.next);
+        }
+        #endregion
+
+        #region Swap Tests
+        [TestMethod]
+        public void TestMethod25()
+        {
+            SNode head = new SNode { data = 1 };
+            head = SinglyLinkedListOps.AddTail(head, 2);
+            head = SinglyLinkedListOps.AddTail(head, 3);
+            head = SinglyLinkedListOps.AddTail(head, 4);
+            head = SinglyLinkedListOps.AddTail(head, 5);
+
+            // Swap 2 and 4
+            SinglyLinkedListOps.Swap(head, head.next, head.next.next.next);
+            ValidateList(head, new List<int> { 1, 4, 3, 2, 5 });
+        }
+
+        [TestMethod]
+        public void TestMethod26()
+        {
+            SNode head = new SNode { data = 1 };
+            head = SinglyLinkedListOps.AddTail(head, 2);
+            head = SinglyLinkedListOps.AddTail(head, 3);
+            head = SinglyLinkedListOps.AddTail(head, 4);
+            head = SinglyLinkedListOps.AddTail(head, 5);
+
+            // Swap 2 and 3
+            SinglyLinkedListOps.Swap(head, head.next, head.next.next);
+            ValidateList(head, new List<int> { 1, 3, 2, 4, 5 });
+        }
+
+        [TestMethod]
+        public void TestMethod27()
+        {
+            SNode head = new SNode { data = 1 };
+            head = SinglyLinkedListOps.AddTail(head, 2);
+            head = SinglyLinkedListOps.AddTail(head, 3);
+            head = SinglyLinkedListOps.AddTail(head, 4);
+            head = SinglyLinkedListOps.AddTail(head, 5);
+
+            // Swap 2 and 3
+            SinglyLinkedListOps.Swap(head, head, head.next);
+            ValidateList(head, new List<int> { 2, 1, 3, 4, 5 });
+        }
+
+        private void ValidateList(SNode head, List<int> expected)
+        {
+            int count = 0;
+            SNode curr = head;
+
+            // Validate count of items in each list is equal.
+            while (curr != null)
+            {
+                count++;
+                curr = curr.next;
+            }
+
+            // Ensure the lists contain the same number of elements.
+            Assert.AreEqual(count, expected.Count);
+
+            curr = head;
+            count = 0;
+            while (curr != null)
+            {
+                // Ensure data for the current node is valid.
+                Assert.AreEqual(expected[count], curr.data);
+
+                count++;
+                curr = curr.next;
+            }
         }
         #endregion
     }

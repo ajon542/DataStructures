@@ -288,7 +288,6 @@ namespace LinkedListTest
                 count++;
                 curr = curr.next;
             }
-
         }
     }
 }

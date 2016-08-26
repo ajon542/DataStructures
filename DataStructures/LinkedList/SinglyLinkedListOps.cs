@@ -113,6 +113,49 @@ namespace LinkedList
             return head;
         }
 
+        public static void InsertAfter(SNode node, SNode a)
+        {
+            a.next = node.next;
+            node.next = a;
+        }
+
+        public static SNode RemoveNext(SNode node)
+        {
+            SNode tmp = node.next;
+            if (tmp != null)
+            {
+                node.next = node.next.next;
+            }
+            return tmp;
+        }
+
+        public static void Swap(SNode head, SNode a, SNode b)
+        {
+            SNode x = head;
+
+            // TODO: What if a is the head of list?
+            // Find the node before a.
+            while (x.next != null && x.next.data != a.data)
+            {
+                x = x.next;
+            }
+
+            SNode y = head;
+
+            // Find the node before b.
+            while (y.next != null && y.next.data != b.data)
+            {
+                y = y.next;
+            }
+
+            x.next = b;
+            y.next = a;
+
+            SNode tmp = a.next;
+            a.next = b.next;
+            b.next = tmp;
+        }
+
         public static int CycleSize(SNode head, SNode curr)
         {
             SNode a = head;
