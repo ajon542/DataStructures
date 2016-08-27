@@ -57,16 +57,19 @@ namespace LinkedList
         {
             SNode newNode = new SNode { data = data };
 
-            // Adding position 0 is the same as AddHead.
+            // Insert item at position 0, the new node is now head of list.
             if (position == 0)
             {
-                return AddHead(head, data);
+                newNode.next = head;
+                return newNode;
             }
 
             int index = 0;
             SNode curr = head;
             SNode prev = null;
 
+            // Iterate through list until position is reached.
+            // If position > list size, will append item to end of list.
             while (curr != null && index < position)
             {
                 prev = curr;
