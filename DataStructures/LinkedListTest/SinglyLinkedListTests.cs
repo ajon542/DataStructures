@@ -377,6 +377,7 @@ namespace LinkedListTest
             head = SinglyLinkedListOps.AddTail(head, 2);
             head = SinglyLinkedListOps.AddTail(head, 3);
 
+            // Swap 1 and 3
             SinglyLinkedListOps.Swap(ref head, head, head.next.next);
             ValidateList(head, new List<int> { 3, 2, 1 });
         }
