@@ -327,7 +327,7 @@ namespace LinkedListTest
             head = SinglyLinkedListOps.AddTail(head, 5);
 
             // Swap 2 and 4
-            SinglyLinkedListOps.Swap(head, head.next, head.next.next.next);
+            SinglyLinkedListOps.Swap(ref head, head.next, head.next.next.next);
             ValidateList(head, new List<int> { 1, 4, 3, 2, 5 });
         }
 
@@ -341,11 +341,11 @@ namespace LinkedListTest
             head = SinglyLinkedListOps.AddTail(head, 5);
 
             // Swap 2 and 3
-            SinglyLinkedListOps.Swap(head, head.next, head.next.next);
+            SinglyLinkedListOps.Swap(ref head, head.next, head.next.next);
             ValidateList(head, new List<int> { 1, 3, 2, 4, 5 });
         }
 
-        /*[TestMethod]
+        [TestMethod]
         public void TestMethod27()
         {
             SNode head = new SNode { data = 1 };
@@ -354,10 +354,32 @@ namespace LinkedListTest
             head = SinglyLinkedListOps.AddTail(head, 4);
             head = SinglyLinkedListOps.AddTail(head, 5);
 
-            // Swap 2 and 3
-            SinglyLinkedListOps.Swap(head, head, head.next);
+            // Swap 1 and 2
+            SinglyLinkedListOps.Swap(ref head, head, head.next);
             ValidateList(head, new List<int> { 2, 1, 3, 4, 5 });
-        }*/
+        }
+
+        [TestMethod]
+        public void TestMethod28()
+        {
+            SNode head = new SNode { data = 1 };
+            head = SinglyLinkedListOps.AddTail(head, 2);
+
+            // Swap 1 and 2
+            SinglyLinkedListOps.Swap(ref head, head, head.next);
+            ValidateList(head, new List<int> { 2, 1 });
+        }
+
+        [TestMethod]
+        public void TestMethod29()
+        {
+            SNode head = new SNode { data = 1 };
+            head = SinglyLinkedListOps.AddTail(head, 2);
+            head = SinglyLinkedListOps.AddTail(head, 3);
+
+            SinglyLinkedListOps.Swap(ref head, head, head.next.next);
+            ValidateList(head, new List<int> { 3, 2, 1 });
+        }
 
         private void ValidateList(SNode head, List<int> expected)
         {

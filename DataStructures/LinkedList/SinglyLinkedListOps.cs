@@ -139,31 +139,62 @@ namespace LinkedList
             return tmp;
         }
 
-        public static void Swap(SNode head, SNode a, SNode b)
+        public static void Swap(ref SNode head, SNode a, SNode b)
         {
-            SNode x = head;
-
-            // TODO: What if a is the head of list?
-            // Find the node before a.
-            while (x.next != null && x.next.data != a.data)
+            // If the nodes are the same:
+            if (a == b)
             {
-                x = x.next;
+                // Nothing to do.
+                return;
             }
 
-            SNode y = head;
-
-            // Find the node before b.
-            while (y.next != null && y.next.data != b.data)
+            // Find a, keeping track of the previous node.
+            SNode prevA = null;
+            SNode currA = head;
+            while (currA != null && currA.data != a.data)
             {
-                y = y.next;
+                prevA = currA;
+                currA = currA.next;
             }
 
-            x.next = b;
-            y.next = a;
+            // Find b, keeping track of the previous node.
+            SNode prevB = null;
+            SNode currB = head;
+            while (currB != null && currB.data != b.data)
+            {
+                prevB = currB;
+                currB = currB.next;
+            }
 
-            SNode tmp = a.next;
-            a.next = b.next;
-            b.next = tmp;
+            // If either node is not found:
+            if (currA == null || currB == null)
+            {
+                // Nothing to do.
+                return;
+            }
+
+            if (prevA != null)
+            {
+                prevA.next = currB;
+            }
+            else
+            {
+                head = currB;
+            }
+
+            if (prevB != null)
+            {
+                prevB.next = currA;
+            }
+            else
+            {
+                head = currA;
+            }
+
+            // Swap the 'next' references.
+            SNode tmp = currB.next;
+            currB.next = currA.next;
+            currA.next = tmp;
         }
 
         public static int CycleSize(SNode head, SNode curr)
