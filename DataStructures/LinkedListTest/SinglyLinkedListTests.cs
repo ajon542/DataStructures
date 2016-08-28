@@ -382,6 +382,18 @@ namespace LinkedListTest
             ValidateList(head, new List<int> { 3, 2, 1 });
         }
 
+        [TestMethod]
+        public void TestMethod30()
+        {
+            SNode head = new SNode { data = 1 };
+            head = SinglyLinkedListOps.AddTail(head, 2);
+            head = SinglyLinkedListOps.AddTail(head, 3);
+
+            // Try to swap nodes that don't exist.
+            SinglyLinkedListOps.Swap(ref head, new SNode { data = 10 }, new SNode { data = 20 });
+            ValidateList(head, new List<int> { 1, 2, 3 });
+        }
+
         private void ValidateList(SNode head, List<int> expected)
         {
             int count = 0;
