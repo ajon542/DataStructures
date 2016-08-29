@@ -57,13 +57,6 @@ namespace LinkedList
         {
             SNode newNode = new SNode { data = data };
 
-            // Insert item at position 0, the new node is now head of list.
-            if (position == 0)
-            {
-                newNode.next = head;
-                return newNode;
-            }
-
             int index = 0;
             SNode curr = head;
             SNode prev = null;
@@ -77,9 +70,19 @@ namespace LinkedList
                 index++;
             }
 
-            // Add the new node.
+            if (prev == null)
+            {
+                // Insert item at head of list.
+                head = newNode;
+            }
+            else
+            {
+                // Insert item in position.
+                prev.next = newNode;
+            }
+
+            // Append the rest of the list after the new node.
             newNode.next = curr;
-            prev.next = newNode;
 
             return head;
         }
